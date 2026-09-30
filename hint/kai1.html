@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第4章 比例と反比例 ①関数と水そう ヒント・解答解説</title>
+<style>
+  :root{
+    --ink:#1f2630; --sub:#5b6672; --line:#d7e1ec; --bg:#f2f6fa; --card:#fff;
+    --blue:#2f6fb5; --blue-d:#245a95; --blue-l:#e5eef8;
+    --green:#3d9b68; --green-l:#e4f3ea; --amber:#d98221; --amber-l:#fdf0dc;
+    --shadow:0 2px 10px rgba(31,38,48,.06);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+    line-height:1.8;-webkit-text-size-adjust:100%;}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 16px 80px}
+  header.page{background:var(--blue);color:#fff;border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+  header.page .tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.06em;
+    background:rgba(255,255,255,.22);padding:4px 12px;border-radius:99px;margin-bottom:10px}
+  header.page h1{margin:0;font-size:22px;line-height:1.5}
+  header.page .meta{margin-top:8px;font-size:13px;opacity:.9}
+  section.block{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-top:18px;box-shadow:var(--shadow)}
+  .block-head{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+  .chip{font-size:13px;font-weight:800;color:#fff;background:var(--blue);padding:3px 12px;border-radius:8px;letter-spacing:.04em;white-space:nowrap;flex:0 0 auto}
+  .chip.green{background:var(--green)}
+  .chip.amber{background:var(--amber)}
+  .chip.gray{background:#7c8a96}
+  h2.block-title{margin:0;font-size:17px}
+  .statement{font-size:16px;margin:8px 0 4px}
+  .src{font-size:12px;color:var(--sub);margin-left:6px}
+  .aim{border-left:6px solid var(--blue);background:var(--blue-l);border-radius:10px;
+    padding:14px 16px;font-weight:700;font-size:16px}
+  .aim .label{display:block;font-size:12px;color:var(--blue-d);font-weight:800;letter-spacing:.08em;margin-bottom:4px}
+  .eq{font-family:"Cambria Math","Times New Roman",serif;font-size:1.06em}
+  .eq i{font-style:italic}
+  .frac{display:inline-block;vertical-align:-0.55em;font-size:.82em;text-align:center;margin:0 .18em}
+  .frac > span{display:block;line-height:1.15}
+  .frac > span:first-child{border-bottom:1.5px solid currentColor;padding:0 .28em}
+  .hint{border:2px solid var(--blue);background:var(--blue-l);border-radius:12px;padding:14px 16px;margin-top:12px;display:none}
+  .hint.show{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .hint .badge{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--blue);
+    padding:3px 12px;border-radius:99px;margin-bottom:6px}
+  .hint .htext{font-size:15px;font-weight:600}
+  button.reveal{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;font-size:14px;
+    color:#fff;background:var(--blue);padding:10px 18px;border-radius:99px;margin-top:14px;
+    box-shadow:var(--shadow);transition:filter .15s}
+  button.reveal:hover{filter:brightness(1.06)}
+  button.reveal.gray{background:#7c8a96}
+  button.reveal.green{background:var(--green)}
+  button.reveal.amber{background:var(--amber)}
+  .answer{display:none;margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+  .answer.show{display:block;animation:fade .25s ease}
+  .answer h3{margin:0 0 6px;font-size:14px;color:var(--blue-d)}
+  .final{background:var(--green-l);border-radius:8px;padding:8px 12px;font-weight:700;display:inline-block}
+  .terms{margin:6px 0 0;padding-left:1.1em}
+  .terms li{margin:4px 0;font-size:15px}
+  .blank{display:inline-block;min-width:5.5em;text-align:center;border-bottom:2px solid var(--ink)}
+  .blank.filled{border-bottom-color:var(--blue);color:var(--blue-d);font-weight:800}
+  svg.numline{max-width:100%;height:auto;vertical-align:middle;color:#222}
+  table.vt{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px;background:#fff}
+  table.vt th,table.vt td{border:1px solid var(--line);padding:6px 8px;text-align:center;white-space:nowrap}
+  table.vt th{background:var(--blue-l);font-weight:700}
+  .steps{margin:8px 0 0;padding-left:0;list-style:none}
+  .steps li{padding:6px 0;border-bottom:1px solid #eef3f8;font-size:15px}
+  .steps li:last-child{border-bottom:0}
+  .statement p{margin:4px 0}
+  .sub-q{margin:16px 0 0;font-weight:800;color:var(--blue-d);font-size:14px}
+  .guide{margin-top:12px;background:var(--green-l);border-radius:10px;padding:12px 14px}
+  .guide .badge{display:inline-block;font-size:12px;font-weight:800;color:#fff;background:var(--green);padding:3px 12px;border-radius:99px;margin-bottom:6px}
+  .guide p{margin:4px 0}
+  .howto{margin:14px 4px 0;font-size:14px;color:var(--sub)}
+  .answer p{margin:6px 0}
+  footer.page{margin-top:30px;text-align:center;font-size:12px;color:var(--sub)}
+  @media (max-width:520px){header.page h1{font-size:19px} table.vt{font-size:12px} table.vt th,table.vt td{padding:4px 5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="page">
+    <span class="tag">中1 数学 / 第4章 比例と反比例</span>
+    <h1>① 関数と水そう ── ヒント＆解答解説</h1>
+    <div class="meta">教科書 p.117〜121 ／ 第1回 ワークシートの全問題 ／ 令和8年度</div>
+  </header>
+
+  <p class="howto">ヒントは1つずつ出てきます。1つ読んだら、まず自分で考えてから次のヒントへ進もう。</p>
+
+  <section class="block">
+    <div class="block-head"><span class="chip">めあて</span><h2 class="block-title">今日できるようになること</h2></div>
+    <div class="aim"><span class="label">本時のめあて</span>時間と水の深さの関係を調べ、満水になるまでの時間を予想することができる。</div>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><span class="chip">課題</span><h2 class="block-title">【課題】</h2></div>
+    <div class="statement"><p>空の水そうに水を入れ始めて10分後に見にいくと、底から30cmの深さまで水がたまっていました。</p>
+<p>満水のときの深さを180cmとして、満水になるまでの時間を予想しましょう。</p>
+<p>（1）下の表の空らんをうめなさい。</p>
+<table class="vt"><tr><th><span class="eq"><i>x</i></span>（分）</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th><th>25</th><th>30</th><th>…</th></tr><tr><th><span class="eq"><i>y</i></span>（cm）</th><td>&nbsp;</td><td>&nbsp;</td><td>30</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>…</td></tr></table>
+<p>（2）1分間に水の深さは何cmずつふえますか。</p>
+<p>（3）満水になるのは何分後ですか。そう考えた理由も書きなさい。</p></div>
+    <p class="sub-q">（1） のヒント</p>
+    <div id="hg0_0">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">表の中で分かっているのは「10分で30cm」だけ。まず、5分は10分の何分の1？</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">時間が半分なら、たまる深さも半分。5分では 30cm の半分で何cm？</div></div>
+      <div class="hint" data-i="3"><span class="badge">ヒント3</span><div class="htext">0分（入れ始め）の深さは？ 水はまだ入っていないね。</div></div>
+      <div class="hint" data-i="4"><span class="badge">ヒント4</span><div class="htext">15分は5分の3つ分。5分で15cmなら、15分では？ 同じように20分・25分・30分も。</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg0_0" data-total="4">ヒントを見る</button>
+    <p class="sub-q">（2） のヒント</p>
+    <div id="hg0_1">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">10分で30cm ふえた。1分あたりにするには、30を何でわればいい？</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">30÷10 を計算しよう。</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg0_1" data-total="2">ヒントを見る</button>
+    <p class="sub-q">（3） のヒント</p>
+    <div id="hg0_2">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">1分で3cm ずつふえる。180cm になるには、3cm が何回分あればいい？</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">「180 の中に 3 はいくつ？」→ 180÷3 を計算しよう。</div></div>
+      <div class="hint" data-i="3"><span class="badge">ヒント3</span><div class="htext">理由は「1分で3cmずつふえるから」を使って1文で書こう。</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg0_2" data-total="3">ヒントを見る</button>
+    <div class="answer" id="ag0">
+      <h3>解答・解説</h3>
+<p>（1）</p>
+<table class="vt"><tr><th><span class="eq"><i>x</i></span>（分）</th><th>0</th><th>5</th><th>10</th><th>15</th><th>20</th><th>25</th><th>30</th><th>…</th></tr><tr><th><span class="eq"><i>y</i></span>（cm）</th><td>0</td><td>15</td><td>30</td><td>45</td><td>60</td><td>75</td><td>90</td><td>…</td></tr></table>
+<p>（2）<span class="eq">30÷10=3</span> → <b>1分間に3cm</b> ずつふえる。</p>
+<p>（3）<span class="eq">180÷3=60</span> → <b>60分後</b></p>
+<p>理由の例：1分に3cmずつふえるから、180cmになるのは <span class="eq">180÷3=60</span>（分後）。</p>
+<p>（別の考え方）30cm の6倍が180cm だから、時間も10分の6倍で60分。</p>
+    </div>
+    <button class="reveal gray" data-answer="ag0">答え合わせをする</button>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><span class="chip amber">覚</span><h2 class="block-title">覚</h2></div>
+    <ul class="terms" id="tg1"><li>いろいろな値をとる文字を（<span class="blank" data-fill="変数">　　　　</span>）という。</li><li><span class="eq"><i>x</i></span> の値を決めると、それにともなって <span class="eq"><i>y</i></span> の値も（<span class="blank" data-fill="ただ1つ">　　　　</span>）決まる。</li><li>このとき「<span class="eq"><i>y</i></span> は <span class="eq"><i>x</i></span> の（<span class="blank" data-fill="関数">　　　　</span>）である」という。</li></ul>
+    <button class="reveal amber" data-terms="tg1">答えを表示</button>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><span class="chip gray">問</span><h2 class="block-title">問3（p.122）</h2></div>
+    <div class="statement"><p>円の周の長さを決めるには、何が決まればよいですか。</p>
+<p>また、そのことを「〜は…の関数である」といういい方で表しなさい。</p></div>
+    <div id="hg2_0">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">円の周の長さを求める公式を思い出そう。「円周＝直径×□」</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">公式の中で、円によって変わる数はどれ？ 円周率 π はいつも同じだね。</div></div>
+      <div class="hint" data-i="3"><span class="badge">ヒント3</span><div class="htext">変わる数（直径）が決まれば、円周はただ1つに決まる。「円の周の長さは、〇〇の関数である」に当てはめよう。</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg2_0" data-total="3">ヒントを見る</button>
+    <div class="answer" id="ag2">
+      <h3>解答・解説</h3>
+<p><b>直径</b>が決まればよい。「円の周の長さは、直径の関数である。」</p>
+<p>（別解）半径が決まればよい。「円の周の長さは、半径の関数である。」</p>
+    </div>
+    <button class="reveal gray" data-answer="ag2">答え合わせをする</button>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><span class="chip gray">問</span><h2 class="block-title">問4（p.122）</h2></div>
+    <div class="statement"><p>次の⑴〜⑷で、<span class="eq"><i>y</i></span> は <span class="eq"><i>x</i></span> の関数であるといえますか。</p>
+<p>⑴ 半径 <span class="eq"><i>x</i></span> cm の円の面積は <span class="eq"><i>y</i></span> cm² である。</p>
+<p>⑵ 20km はなれた目的地へ、時速 <span class="eq"><i>x</i></span> km の自動車で行くと <span class="eq"><i>y</i></span> 時間かかる。</p>
+<p>⑶ <span class="eq"><i>x</i></span> 歳の人の身長は <span class="eq"><i>y</i></span> cm である。</p>
+<p>⑷ 整数 <span class="eq"><i>x</i></span> の絶対値は <span class="eq"><i>y</i></span> である。</p></div>
+    <div id="hg3_0">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">判断のしかたは1つだけ。「<span class="eq"><i>x</i></span> を1つ決めたら、<span class="eq"><i>y</i></span> はいつも1つに決まる？」</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">⑴ 半径を 2cm と決めたら、面積は1つに決まる？ ⑵ 時速を 40km と決めたら、かかる時間は1つに決まる？</div></div>
+      <div class="hint" data-i="3"><span class="badge">ヒント3</span><div class="htext">⑶ 13歳の人を何人か思いうかべよう。身長はみんな同じ？</div></div>
+      <div class="hint" data-i="4"><span class="badge">ヒント4</span><div class="htext">⑷ 整数 −3 の絶対値はいくつ？ いつも1つに決まる？</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg3_0" data-total="4">ヒントを見る</button>
+    <div class="answer" id="ag3">
+      <h3>解答・解説</h3>
+<p>⑴ <b>いえる</b>（半径が決まれば面積はただ1つ）</p>
+<p>⑵ <b>いえる</b>（速さが決まれば時間はただ1つ）</p>
+<p>⑶ <b>いえない</b>（同じ年齢でも身長は人によってちがう）</p>
+<p>⑷ <b>いえる</b>（整数が決まれば絶対値はただ1つ）</p>
+    </div>
+    <button class="reveal gray" data-answer="ag3">答え合わせをする</button>
+  </section>
+
+  <section class="block">
+    <div class="block-head"><span class="chip green">考えよう</span><h2 class="block-title">学びをふり返ろう（p.123）</h2></div>
+    <div class="statement"><p>シュレッダーで裁断された紙が、およそ何枚分かを知るには、何が分かればよいでしょうか。</p></div>
+    <div id="hg4_0">
+      <div class="hint" data-i="1"><span class="badge">ヒント1</span><div class="htext">裁断された紙を1枚ずつ数えるのは、むずかしいね。</div></div>
+      <div class="hint" data-i="2"><span class="badge">ヒント2</span><div class="htext">数えるかわりに、はかりやすいものは何だろう？ 紙の量がふえると、何もふえる？</div></div>
+      <div class="hint" data-i="3"><span class="badge">ヒント3</span><div class="htext">「紙の枚数が決まれば〇〇が決まる」という関係を使えば、〇〇から枚数を予想できる。</div></div>
+    </div>
+    <button class="reveal" data-hintgroup="hg4_0" data-total="3">ヒントを見る</button>
+    <div class="answer" id="ag4">
+      <h3>解答・解説</h3>
+<p>紙の<b>重さ</b>（または かさ）が分かればよい。</p>
+<p>紙の枚数と重さは関数の関係にあるので、全体の重さをはかれば、およその枚数が分かる。</p>
+<p>直接はかりにくい数量は、それと関数の関係にある「はかりやすい数量」を見つけて利用する。</p>
+    </div>
+    <button class="reveal gray" data-answer="ag4">答え合わせをする</button>
+  </section>
+
+  <footer class="page">安里式AIシステム ／ 第4章 比例と反比例 第1回 ヒント・解答解説</footer>
+</div>
+
+<script>
+  document.querySelectorAll('button.reveal[data-hintgroup]').forEach(function(btn){
+    var group = document.getElementById(btn.dataset.hintgroup);
+    var total = parseInt(btn.dataset.total, 10);
+    var firstText = btn.textContent, shown = 0;
+    function render(){
+      for(var i = 1; i <= total; i++){
+        var h = group.querySelector('.hint[data-i="' + i + '"]');
+        if(h){ h.classList.toggle('show', i <= shown); }
+      }
+      if(shown === 0){ btn.textContent = firstText; }
+      else if(shown < total){ btn.textContent = '次のヒントを見る（' + shown + '／' + total + '）'; }
+      else { btn.textContent = 'ヒントを閉じる'; }
+    }
+    btn.addEventListener('click', function(){ shown = (shown >= total) ? 0 : shown + 1; render(); });
+  });
+  document.querySelectorAll('button.reveal[data-answer]').forEach(function(btn){
+    var box = document.getElementById(btn.dataset.answer), openText = btn.textContent;
+    btn.addEventListener('click', function(){
+      var open = box.classList.toggle('show');
+      btn.textContent = open ? '閉じる' : openText;
+    });
+  });
+  document.querySelectorAll('button.reveal[data-terms]').forEach(function(btn){
+    var list = document.getElementById(btn.dataset.terms);
+    var blanks = list.querySelectorAll('.blank'), filled = false;
+    btn.addEventListener('click', function(){
+      filled = !filled;
+      blanks.forEach(function(b){
+        if(filled){ b.innerHTML = b.dataset.fill; b.classList.add('filled'); }
+        else { b.textContent = '\u3000\u3000\u3000\u3000'; b.classList.remove('filled'); }
+      });
+      btn.textContent = filled ? '答えを隠す' : '答えを表示';
+    });
+  });
+</script>
+</body>
+</html>
